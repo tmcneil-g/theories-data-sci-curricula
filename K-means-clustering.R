@@ -13,6 +13,8 @@ library(factoextra)
 #read the dataset
 programs.scores <- read.csv(file = "scores-nasem.csv")
 
+head(programs.scores)
+
 # Merge the institutions with units to get short names in units_df
 # Will do this later
 
