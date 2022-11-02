@@ -1,4 +1,4 @@
-# Theories data science curricula comparisons
+# Higher education theories for data science curricula comparisons
 
 A theoretical investigation of how undergraduate data science programs perform against two 
 data science frameworks, the National Academies' "Data Science for 
