@@ -5,14 +5,15 @@
 
 #########################################################################
 # Using k-means clustering, where x-axis is the institution and y-axis is a 
-#specific area/sub-area in the NASEM framework
+# specific area/sub-area in the NASEM framework
 
-install.packages(factoextra)
-library(factoextra)
+install.packages("factoextra")
+library("factoextra")
 
 #read the dataset
 programs.scores <- read.csv(file = "scores-nasem.csv")
 
+# Investigate data 
 head(programs.scores)
 
 # Merge the institutions with units to get short names in units_df
@@ -25,10 +26,10 @@ head(programs.scores)
 # Will do this later
 # rownames(units_df) <- NULL
 
-#select a subset of the variables
+# select a subset of the variables
 programs.domain <- programs.scores[,c("Institution", "NASEM.Domain.01")]
 
-#compute the number of chosen clusters 
+# compute the number of chosen clusters 
 km <- kmeans(programs.domain, centers = 3)
 km
 
