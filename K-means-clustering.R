@@ -23,6 +23,7 @@ programs.domain <- programs.scores[,c("Institution", "NASEM.Domain.01")]
 km <- kmeans(programs.domain, centers = 3)
 km
 
+# plot the results of the clusters in a scatter plot formed by the two variables
 fviz_cluster(km, data = programs.domain, label=NA)+theme_bw()
 
 
