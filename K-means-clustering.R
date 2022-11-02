@@ -9,6 +9,8 @@
 
 install.packages("factoextra")
 library("factoextra")
+install.packages("cluster")
+library("cluster")
 
 #read the dataset
 programs.scores <- read.csv(file = "scores-nasem.csv")
@@ -26,8 +28,15 @@ head(programs.scores)
 # Will do this later
 # rownames(units_df) <- NULL
 
+# Drop NA's
+# Not necessary for this dataset
+programs.scores <- na.omit(programs.scores)
+
 # select a subset of the variables
 programs.domain <- programs.scores[,c("Institution", "NASEM.Domain.01")]
+
+# Drop any NA rows
+programs.scores <- na.omit(programs.scores)
 
 # compute the number of chosen clusters 
 km <- kmeans(programs.domain, centers = 3)
