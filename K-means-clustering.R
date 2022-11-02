@@ -6,6 +6,7 @@
 #########################################################################
 # Using k-means clustering, where x-axis is the institution and y-axis is a 
 # specific area/sub-area in the NASEM framework
+# Using code from this website: https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html
 
 install.packages("factoextra")
 library("factoextra")
