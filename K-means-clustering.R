@@ -13,8 +13,15 @@ library(factoextra)
 #read the dataset
 programs.scores <- read.csv(file = "scores-nasem.csv")
 
-# Drop any NA rows
-#programs.scores <- na.omit(programs.scores)
+# Merge the institutions with units to get short names in units_df
+# Will do this later
+
+# Merge units_df with programs
+# Will do this later
+
+# Re-number rows
+# Will do this later
+# rownames(units_df) <- NULL
 
 #select a subset of the variables
 programs.domain <- programs.scores[,c("Institution", "NASEM.Domain.01")]
