@@ -4,7 +4,7 @@
 # 2022-11-01
 
 #########################################################################
-# Using k-means clustering, where x-axis is the program and the y-axis is a 
+# Using k-means clustering, where x-axis is the program and y-axis is a 
 #specific area/sub-area in the NASEM framework
 
 set.seed (4)
