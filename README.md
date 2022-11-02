@@ -1,1 +1,1 @@
-# Clustering-curricula
+# Theories data science curricula comparisons
