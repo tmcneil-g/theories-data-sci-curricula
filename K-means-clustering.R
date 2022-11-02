@@ -4,7 +4,7 @@
 # 2022-11-01
 
 #########################################################################
-# Using k-means clustering, where x-axis is the institution and y-axis is a 
+# Using k-means clustering, where x-axis is a specific area/sub-area and y-axis is a 
 # specific area/sub-area in the NASEM framework
 # Using code from this website: https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html
 
@@ -19,32 +19,19 @@ programs.scores <- read.csv(file = "scores-nasem.csv")
 # Investigate data 
 head(programs.scores)
 
-# Merge the institutions with units to get short names in units_df
-# Will do this later
-
-# Merge units_df with programs
-# Will do this later
-
-# Re-number rows
-# Will do this later
-# rownames(units_df) <- NULL
+# select a subset of the variables
+ethics.domain <- programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")]
 
 # Drop NA's
 # Not necessary for this dataset
-programs.scores <- na.omit(programs.scores)
-
-# select a subset of the variables
-programs.domain <- programs.scores[,c("Institution", "NASEM.Domain.01")]
-
-# Drop any NA rows
-programs.scores <- na.omit(programs.scores)
+# programs.scores <- na.omit(programs.scores)
 
 # compute the number of chosen clusters 
-km <- kmeans(programs.domain, centers = 3)
+km <- kmeans(ethics.domain, centers = 3)
 km
 
 # plot the results of the clusters in a scatter plot formed by the two variables
-fviz_cluster(km, data = programs.domain, label=NA)+theme_bw()
+fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
 
 
 
