@@ -13,7 +13,7 @@ library("factoextra")
 install.packages("cluster")
 library("cluster")
 
-#read the dataset
+# read the dataset
 programs.scores <- read.csv(file = "scores-nasem.csv")
 
 # Investigate data 
