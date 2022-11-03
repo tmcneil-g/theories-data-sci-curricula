@@ -22,10 +22,6 @@ head(programs.scores)
 # select a subset of the variables
 ethics.domain <- programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")]
 
-# Drop NA's
-# Not necessary for this dataset
-# programs.scores <- na.omit(programs.scores)
-
 # compute the number of chosen clusters 
 km <- kmeans(ethics.domain, centers = 3)
 km
