@@ -35,8 +35,8 @@ fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
 institution.domain <- programs.scores[,c("Institution.01", "NASEM.Domain.01")]
 
 # compute the number of chosen clusters 
-km <- kmeans(institution.domain, centers = 3)
-km
+km.1 <- kmeans(institution.domain, centers = 3)
+km.1
 
 # plot the results of the clusters in a scatter plot formed by the two variables
 fviz_cluster(km, data = institution.domain, label=NA)+theme_bw()
