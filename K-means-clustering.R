@@ -13,7 +13,7 @@ install.packages("cluster")
 library("cluster")
 
 # read the dataset
-programs.scores <- read.csv(file = "scores-nasem.csv")
+programs.scores <- read.csv(file = "scores-nasem-1.csv")
 
 # Investigate data 
 head(programs.scores)
