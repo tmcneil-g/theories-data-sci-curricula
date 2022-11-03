@@ -1,4 +1,4 @@
-# K-means clustering for area/sub-area scores for NASEM framework
+# K-means clustering for data science curricula comparisons
 # Torbet McNeil
 # tmcneil@arizona.edu
 # 2022-11-01
