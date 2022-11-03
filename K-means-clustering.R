@@ -30,16 +30,16 @@ km
 fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
 
 # select a subset of the variables
-# Here, the x-axis is the program, and the y-axis is a specific areas/sub-areas in the NASEM framework.
+# Here, the x-axis is the institution, and the y-axis is a specific areas/sub-areas in the NASEM framework.
 # I re-coded the program name to a numerical number from 1-18
-program.domain <- programs.scores[,c("Institution.01", "NASEM.Domain.01")]
+institution.domain <- programs.scores[,c("Institution.01", "NASEM.Domain.01")]
 
 # compute the number of chosen clusters 
-km <- kmeans(program.domain, centers = 3)
+km <- kmeans(institution.domain, centers = 3)
 km
 
 # plot the results of the clusters in a scatter plot formed by the two variables
-fviz_cluster(km, data = program.domain, label=NA)+theme_bw()
+fviz_cluster(km, data = institution.domain, label=NA)+theme_bw()
 
 
 # parts of code from An Introduction to Statistical Learning book that I am not using now
