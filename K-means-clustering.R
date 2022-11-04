@@ -20,6 +20,7 @@ head(programs.scores)
 
 # select a subset of the variables
 # Here, the x-axis and y-axis are specific areas/sub-areas in the NASEM framework
+# I chose two variables that scored low: ethics.01, the most general ethics sub-area, and domain
 ethics.domain <- programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")]
 
 # compute the number of chosen clusters 
@@ -29,17 +30,32 @@ km
 # plot the results of the clusters in a scatter plot formed by the two variables
 fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
 
+
 # select a subset of the variables
-# Here, the x-axis is the institution, and the y-axis is a specific areas/sub-areas in the NASEM framework.
-# I re-coded the program name to a numerical number from 1-18
-institution.domain <- programs.scores[,c("Institution.01", "NASEM.Domain.01")]
+# Here, the x-axis and y-axis are specific areas/sub-areas in the NASEM framework
+# I chose variables that are common in many programs: machine learning and data viz
+ML.visual <- programs.scores[,c("NASEM.Modeling.01", "NASEM.Data.description.visualization.01")]
 
 # compute the number of chosen clusters 
-km.1 <- kmeans(institution.domain, centers = 3)
+km.1 <- kmeans(ML.visual, centers = 3)
 km.1
 
 # plot the results of the clusters in a scatter plot formed by the two variables
-fviz_cluster(km, data = institution.domain, label=NA)+theme_bw()
+fviz_cluster(km, data = ML.visual, label=NA)+theme_bw()
+
+
+# select a subset of the variables
+# Here, the x-axis is the institution, and the y-axis is a specific areas/sub-areas in the NASEM framework.
+# I re-coded the program name to a numerical number from 1-18
+# Code runs, but results do not appear meaningful
+# institution.domain <- programs.scores[,c("Institution.01", "NASEM.Domain.01")]
+
+# compute the number of chosen clusters 
+# km.2 <- kmeans(institution.domain, centers = 3)
+# km.2
+
+# plot the results of the clusters in a scatter plot formed by the two variables
+# fviz_cluster(km, data = institution.domain, label=NA)+theme_bw()
 
 
 # parts of code from An Introduction to Statistical Learning book that I am not using now
