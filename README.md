@@ -18,5 +18,5 @@ This work addresses several main questions:
 ## 1. Comparison of skills 
 To compare skills, using the 46 areas/sub-areas in the NASEM (2018) framework, I measure coursework coverage of (1) “hard” skills in statistics/mathematics and computer science versus (2) domain knowledge and “soft” skills in ethics and communication and teamwork.
 
-2. Cluster analysis
+## 2. Cluster analysis
 I compare coverage among 53 areas/sub-areas within each of the NASEM and GDS frameworks using cluster analysis.
