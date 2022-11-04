@@ -43,6 +43,8 @@ km.1
 # plot the results of the clusters in a scatter plot formed by the two variables
 fviz_cluster(km, data = ML.visual, label=NA)+theme_bw()
 
+# I am conducting exploratory analysis by select other subsets of the variables
+
 
 # select a subset of the variables
 # Here, the x-axis is the institution, and the y-axis is a specific areas/sub-areas in the NASEM framework.
