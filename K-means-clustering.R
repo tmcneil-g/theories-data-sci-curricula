@@ -45,6 +45,21 @@ fviz_cluster(km, data = ML.visual, label=NA)+theme_bw()
 
 # I am conducting exploratory analysis by select other subsets of the variables
 
+# Create table that shows the distinct pairs of points
+count(ethics.domain, NASEM.Modeling.01, NASEM.Data.description.visualization.01)
+
+# Look at basic scatterplots of data to see if fancy-dancy k-means clustering is even needed
+ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualization.01)) + 
+  geom_point(alpha=0.2) + 
+  theme_bw()
+
+ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualization.01)) + 
+  geom_jitter(width = 0.1, height = 0.1, alpha = 0.5) + 
+  theme_bw()
+
+# There are four distinct groups in data. K-means clustering does not really appear needed.
+# Can check other scatterplots to see if I think other pairs of variables will benefit from k-means clustering 
+
 
 # select a subset of the variables
 # Here, the x-axis is the institution, and the y-axis is a specific areas/sub-areas in the NASEM framework.
