@@ -47,6 +47,9 @@ fviz_cluster(km, data = ML.visual, label=NA)+theme_bw()
 # Create table that shows the distinct pairs of points
 count(ethics.domain, NASEM.Modeling.01, NASEM.Data.description.visualization.01)
 
+# Investigate variable
+ethics.domain
+
 # Look at basic scatterplots of data to see if fancy-dancy k-means clustering is even needed
 ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualization.01)) + 
   geom_point(alpha=0.2) + 
