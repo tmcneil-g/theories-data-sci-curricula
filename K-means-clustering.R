@@ -11,6 +11,7 @@ install.packages("factoextra")
 library("factoextra")
 install.packages("cluster")
 library("cluster")
+library("dplyr")
 
 # read the dataset
 programs.scores <- read.csv(file = "scores-nasem-1.csv")
