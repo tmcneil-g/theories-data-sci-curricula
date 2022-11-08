@@ -30,7 +30,6 @@ km
 # plot the results of the clusters in a scatter plot formed by the two variables
 fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
 
-
 # select a subset of the variables
 # Here, the x-axis and y-axis are specific areas/sub-areas in the NASEM framework
 # I chose variables that are common in many programs: machine learning and data viz
