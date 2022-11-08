@@ -7,9 +7,7 @@
 # Using k-means clustering
 # Using code from this website: https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html
 
-install.packages("factoextra")
 library("factoextra")
-install.packages("cluster")
 library("cluster")
 library("dplyr")
 
