@@ -58,6 +58,7 @@ ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualiz
   theme_bw()
 
 # There are four distinct groups in data. K-means clustering does not really appear needed.
+# If I see more fuzziness and overlap of points, then k-means clustering may be justified
 # Can check other scatterplots to see if I think other pairs of variables will benefit from k-means clustering 
 
 
