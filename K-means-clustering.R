@@ -62,6 +62,18 @@ ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualiz
 # If I see more fuzziness and overlap of points, then k-means clustering may be justified
 # Can check other scatterplots to see if I think other pairs of variables will benefit from k-means clustering 
 
+# including all areas in NASEM
+# select a subset of the variables
+# Here, the x-axis and y-axis are specific areas in the NASEM framework
+# NASEM.areas <- programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")]
+
+# compute the number of chosen clusters 
+# km <- kmeans(ethics.domain, centers = 3)
+# km
+
+# plot the results of the clusters in a scatter plot formed by the two variables
+#fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
+
 
 # select a subset of the variables
 # Here, the x-axis is the institution, and the y-axis is a specific areas/sub-areas in the NASEM framework.
