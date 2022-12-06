@@ -74,6 +74,9 @@ ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualiz
 # plot the results of the clusters in a scatter plot formed by the two variables
 #fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
 
+# Add in all variables and start to make multiple dimension plots 
+
+
 
 # select a subset of the variables
 # Here, the x-axis is the institution, and the y-axis is a specific areas/sub-areas in the NASEM framework.
