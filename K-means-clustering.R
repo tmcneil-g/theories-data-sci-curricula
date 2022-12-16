@@ -62,19 +62,28 @@ ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualiz
 # If I see more fuzziness and overlap of points, then k-means clustering may be justified
 # Can check other scatterplots to see if I think other pairs of variables will benefit from k-means clustering 
 
-# including all areas in NASEM
-# select a subset of the variables
-# Here, the x-axis and y-axis are specific areas in the NASEM framework
-# NASEM.areas <- programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")]
+# including all areas/sub-areas in NASEM in cluster analysis
+# 
+# NASEM.all.areas <- programs.scores[,c("NASEM.Math.01", "NASEM.Math.02", "NASEM.Math.03", "NASEM.Math.04", "NASEM.Math.05", "NASEM.Math.06", 
+"NASEM.Compute.01", "NASEM.Compute.02", "NASEM.Compute.03", "NASEM.Compute.04", "NASEM.Compute.05", 
+"NASEM.Statistics.01", "NASEM.Statistics.02", "NASEM.Statistics.03", "NASEM.Statistics.04", "NASEM.Statistics.05", "NASEM.Statistics.06",
+"NASEM.Data.management.01", "NASEM.Data.management.02", "NASEM.Data.management.03", "NASEM.Data.management.04", "NASEM.Data.management.05", "NASEM.Data.management.06", "NASEM.Data.management.07",
+"NASEM.Data.description.visualization.01", "NASEM.Data.description.visualization.02", "NASEM.Data.description.visualization.03", 
+"NASEM.Modeling.01", "NASEM.Modeling.02", "NASEM.Modeling.03", "NASEM.Modeling.04", "NASEM.Modeling.05", "NASEM.Modeling.06",
+"NASEM.Reproducibility.01", "NASEM.Reproducibility.02", 
+"NASEM.Communication.01", "NASEM.Communication.02", "NASEM.Communication.03","NASEM.Communication.04", "NASEM.Communication.05",
+"NASEM.Domain.01", 
+"NASEM.Ethics.01", "NASEM.Ethics.02", "NASEM.Ethics.03", "NASEM.Ethics.04", "NASEM.Ethics.05")]
 
 # compute the number of chosen clusters 
-# km <- kmeans(ethics.domain, centers = 3)
-# km
+# km.2 <- kmeans(NASEM.all.areas, centers = 3)
+# km.2
 
-# plot the results of the clusters in a scatter plot formed by the two variables
-#fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
+# plot the results of the clusters in a scatter plot formed by the variables
+fviz_cluster(km.2, data = NASEM.all.areas, label=NA)+theme_bw()
 
-# Add in all variables and start to make multiple dimension plots 
+#  start to make multiple dimension plots 
+
 
 
 
