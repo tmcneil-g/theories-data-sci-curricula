@@ -83,19 +83,29 @@ km.2
 
 # plot the results of the clusters in a scatter plot formed by the variables
 fviz_cluster(km.2, data = NASEM.all.areas, label=NA)+theme_bw()
+# Got error message: "Error in prcomp.default(data, scale = FALSE, center = FALSE) : 
+  cannot rescale a constant/zero column to unit variance"
 
 #  start to make multiple dimension plots 
 
 
 # including all areas/sub-areas in GDS in cluster analysis
-GDS.all.areas <- programs.scores[,c("GDS.Data.literacy", "GDS.Databases", "GDS.Math", "GDS.Compute", "GDS.Generative.Modeling", "GDS.Predictive.Modeling", "GDS.Communication", "GDS.Science")]
+# read the dataset
+GDS.programs.scores <- read.csv(file = "scores-GDS-1.csv")
 
-# compute the number of chosen clsuters
+# Investigate data 
+head(GDS.programs.scores)
+
+# Include all GDS area scores
+GDS.all.areas <- GDS.programs.scores[,c("GDS.Data.literacy", "GDS.Databases", "GDS.Math", "GDS.Compute", "GDS.Generative.Modeling", "GDS.Predictive.Modeling", "GDS.Communication", "GDS.Science")]
+
+# compute the number of chosen clusters
 km.3 <- kmeans(GDS.all.areas, centers = 3)
 km.3
 
 # plot the results of the clusters in a scatter plot formed by the variables
 fviz_cluster(km.3, data = GDS.all.areas, label=NA)+theme_bw()
+# Got all code to run and put plot in "Notes for clustering project" document 
 
 # try different numbers of clusters
 
