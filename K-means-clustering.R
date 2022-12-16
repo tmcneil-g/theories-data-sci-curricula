@@ -86,6 +86,7 @@ fviz_cluster(km.2, data = NASEM.all.areas, label=NA)+theme_bw()
 
 #  start to make multiple dimension plots 
 
+
 # including all areas/sub-areas in GDS in cluster analysis
 GDS.all.areas <- programs.scores[,c("GDS.Data.literacy", "GDS.Databases", "GDS.Math", "GDS.Compute", "GDS.Generative.Modeling", "GDS.Predictive.Modeling", "GDS.Communication", "GDS.Science")]
 
@@ -97,6 +98,9 @@ km.3
 fviz_cluster(km.3, data = GDS.all.areas, label=NA)+theme_bw()
 
 # try different numbers of clusters
+
+# including only the mean area scores in NASEM in cluster analysis
+# NASEM.only.areas <- programs.scores[,c("
 
 
 # select a subset of the variables
