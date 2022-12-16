@@ -73,7 +73,7 @@ km.2
 # plot the results of the clusters in a scatter plot formed by the variables
 fviz_cluster(km.2, data = NASEM.all.areas, label=NA)+theme_bw()
 
-# Get following error message: "Error in prcomp.default(data, scale = FALSE, center = FALSE) : 
+# Get following error message after preceding line of code: "Error in prcomp.default(data, scale = FALSE, center = FALSE) : 
   cannot rescale a constant/zero column to unit variance"
 
 #  start to make multiple dimension plots 
