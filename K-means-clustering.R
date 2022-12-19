@@ -5,7 +5,8 @@
 
 #########################################################################
 # Using k-means clustering
-# Using code from this website: https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html
+# Using code from this website: https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html. This code is different than that in An Introduction to Statistical
+Learning. 
 
 library("factoextra")
 library("cluster")
