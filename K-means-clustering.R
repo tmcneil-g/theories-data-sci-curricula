@@ -139,20 +139,6 @@ fviz_cluster(km.3, data = GDS.all.areas, label=NA)+theme_bw()
 # NASEM.only.areas <- programs.scores[,c("
 
 
-# select a subset of the variables
-# Here, the x-axis is the institution, and the y-axis is a specific areas/sub-areas in the NASEM framework.
-# I re-coded the program name to a numerical number from 1-18
-# Code runs, but results do not appear meaningful
-# institution.domain <- programs.scores[,c("Institution.01", "NASEM.Domain.01")]
-
-# compute the number of chosen clusters 
-# km.4 <- kmeans(institution.domain, centers = 3)
-# km.4
-
-# plot the results of the clusters in a scatter plot formed by the two variables
-# fviz_cluster(km, data = institution.domain, label=NA)+theme_bw()
-
-
 # parts of code from An Introduction to Statistical Learning book that I am not using now
 # set.seed (4)
 # km.out <- kmeans (x, 3, centers = 3)
