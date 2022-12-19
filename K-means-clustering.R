@@ -106,7 +106,7 @@ km.5
 
 # plot the results of the clusters in a scatter plot formed by the variables
 fviz_cluster(km.5, data = NASEM.all.areas.1, label=NA)+theme_bw()
-
+# Got all code to run and put plot in "Notes for clustering project" document 
 
 
 #  start to make multiple dimension plots 
