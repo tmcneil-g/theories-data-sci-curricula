@@ -8,6 +8,8 @@
 # Using code from this website: https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html. This code is different than that in An Introduction to Statistical
 Learning. 
 
+# Please also look at notes/questions on the Google Doc "Notes for clustering project" updated 12-19
+
 library("factoextra")
 library("cluster")
 library("dplyr")
