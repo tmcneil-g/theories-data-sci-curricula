@@ -5,10 +5,11 @@
 
 #########################################################################
 # Using k-means clustering
-# Using code from this website: https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html. This code is different than that in An Introduction to Statistical
-Learning. 
+# Using code from this website: https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html. This code is different than that for 
+# running k-means clustering in An Introduction to Statistical Learning. 
 
-# Please also look at notes/questions on the Google Doc "Notes for clustering project" updated 12-19
+# Please also look at notes/questions on the Google Doc "Notes for clustering project" updated 12-19:
+# https://docs.google.com/document/d/1Y7HgH8U0KEWig-rw4qZpULBX8b2VY3iJiObbir6_TvI/edit
 
 library("factoextra")
 library("cluster")
@@ -44,7 +45,7 @@ km.1
 # plot the results of the clusters in a scatter plot formed by the two variables
 fviz_cluster(km, data = ML.visual, label=NA)+theme_bw()
 
-# I am conducting exploratory analysis by select other subsets of the variables
+# I can onduct exploratory analysis by selecting other pairs of variables.
 
 # Create table that shows the distinct pairs of points
 count(ethics.domain, NASEM.Modeling.01, NASEM.Data.description.visualization.01)
@@ -52,7 +53,7 @@ count(ethics.domain, NASEM.Modeling.01, NASEM.Data.description.visualization.01)
 # Investigate variable
 ethics.domain
 
-# Look at basic scatterplots of data to see if fancy-dancy k-means clustering is even needed
+# Look at basic scatterplots of data
 ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualization.01)) + 
   geom_point(alpha=0.2) + 
   theme_bw()
@@ -62,7 +63,7 @@ ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualiz
   theme_bw()
 
 # There are four distinct groups in data. K-means clustering does not really appear needed.
-# If I see more fuzziness and overlap of points, then k-means clustering may be justified
+# If I see more fuzziness and overlap of points, then k-means clustering may be justified.
 # Can check other scatterplots to see if I think other pairs of variables will benefit from k-means clustering 
 
 # including all areas/sub-areas in NASEM in cluster analysis
