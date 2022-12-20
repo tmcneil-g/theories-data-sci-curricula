@@ -8,7 +8,7 @@
 # Using code from this website: https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html. This code is different than that for 
 # running k-means clustering in An Introduction to Statistical Learning. 
 
-# Please also look at notes/questions on the Google Doc "Notes for clustering project" updated 12-19:
+# Please also look at notes/questions on the Google Doc "Notes for clustering project" (updated 12-19; you have access through @arizona.edu account):
 # https://docs.google.com/document/d/1Y7HgH8U0KEWig-rw4qZpULBX8b2VY3iJiObbir6_TvI/edit
 
 library("factoextra")
