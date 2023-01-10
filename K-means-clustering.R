@@ -56,6 +56,9 @@ ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualiz
   geom_jitter(width = 0.1, height = 0.1, alpha = 0.5) + 
   theme_bw()
 
+# Elbow method (scree plot) to determine ideal number of clusters
+
+
 # including all areas/sub-areas in NASEM in cluster analysis, excluding following: NASEM.Statistics.04, NASEM.Data.management.01, NASEM.Data.management.06, NASEM.Data.description.visualization.02
 # Reason doing above is that error message states one cannot include variable that has 0 variance (https://stackoverflow.com/questions/15068981/removal-of-constant-columns-in-r)
 # Doing the preceding got rid of error message
@@ -83,6 +86,7 @@ fviz_cluster(km.5, data = NASEM.all.areas.1, label=NA)+theme_bw()
 
 # try different numbers of clusters
 
+# Elbow method (scree plot) to determine ideal number of clusters
 
 # including all areas/sub-areas in GDS in cluster analysis
 # read the dataset
@@ -102,8 +106,24 @@ km.3
 fviz_cluster(km.3, data = GDS.all.areas, label=NA)+theme_bw()
 # Got all code to run and put plot in "Notes for clustering project" document 
 
-# try different numbers of clusters
 
-# including only the mean area scores in NASEM in cluster analysis
+
+# including only the mean area scores in NASEM in cluster analysis. Not sure if this is necessary. 
 # NASEM.only.areas <- programs.scores[,c("
+
+
+# perform principal components analysis using the prcomp() function on NASEM
+pr.out.NA <- prcomp (NASEM.all.areas.1 , scale = TRUE)
+names (pr.out.NA)
+pr.out.NA$rotation
+
+
+# perform principal components analysis using the prcomp() function on GDS
+pr.out.GDS <- prcomp (GDS.all.areas , scale = TRUE)
+names (pr.out.GDS)
+pr.out.GDS$rotation
+
+
+
+
 
