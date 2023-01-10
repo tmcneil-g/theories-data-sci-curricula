@@ -1,4 +1,4 @@
-# K-means clustering for data science curricula comparisons
+# K-means clustering and PCA for data science curricula comparisons
 # Torbet McNeil
 # tmcneil@arizona.edu
 # 2022-11-01
