@@ -82,9 +82,7 @@ fviz_cluster(km.5, data = NASEM.all.areas.1, label=NA)+theme_bw()
 
 # put plot in "Notes for clustering project" document 
 
-#  start to make multiple dimension plots 
-
-# try different numbers of clusters
+# start to make multiple dimension plots 
 
 # Elbow method (scree plot) to determine ideal number of clusters
 
@@ -104,7 +102,7 @@ km.3
 
 # plot the results of the clusters in a scatter plot formed by the variables
 fviz_cluster(km.3, data = GDS.all.areas, label=NA)+theme_bw()
-# Got all code to run and put plot in "Notes for clustering project" document 
+# Put plot in "Notes for clustering project" document 
 
 
 
