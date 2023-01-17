@@ -134,15 +134,7 @@ plot(x = pr.out.NA$x[, 1],
      xlab = "PC 1",
      ylab = "PC 2",
      pch = 19,
-    
-legend("bottomleft", 
-       legend = Institution.names, 
-       pch = 19, 
-       cex = 0.8)
-     
-# Got following error message: "Error in legend("bottomleft", legend = Institution.names, pch = 19, cex = 0.8) : 
-  'legend' is of length 0"
-
+   
 
 # perform principal components analysis using the prcomp() function on GDS
 pr.out.GDS <- prcomp (x = GDS.programs.scores , scale = TRUE)
@@ -166,9 +158,4 @@ plot(x = pr.out.GDS$x[, 1],
      ylab = "PC 2",
      pch = 19,
     
-legend("bottomleft", 
-       legend = Institution.names.1, 
-       pch = 19, 
-       cex = 0.8)
-
 
