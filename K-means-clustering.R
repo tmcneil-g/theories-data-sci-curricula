@@ -21,7 +21,8 @@ head(programs.scores)
 # I chose two variables that scored low: ethics.01, the most general ethics sub-area, and domain
 ethics.domain <- programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")]
 
-# compute the number of chosen clusters 
+# compute the number of chosen clusters
+# Will change this after correct interpretation of Scree plot
 km <- kmeans(ethics.domain, centers = 3)
 km
 
@@ -37,6 +38,7 @@ ML.visual <- programs.scores[,c("NASEM.Modeling.01", "NASEM.Data.description.vis
 fviz_nbclust(programs.scores, kmeans, method = "wss",  k.max = 17)
 
 # compute the number of chosen clusters 
+# Will change this after correct interpretation of Scree plot
 km.1 <- kmeans(ML.visual, centers = 3)
 km.1
 
@@ -77,6 +79,7 @@ NASEM.all.areas.1 <- programs.scores[,c("NASEM.Math.01", "NASEM.Math.02", "NASEM
 fviz_nbclust(NASEM.all.areas.1, kmeans, method = "wss",  k.max = 17)
 
 # compute the number of chosen clusters 
+# Will change this after correct interpretation of Scree plot
 km.5 <- kmeans(NASEM.all.areas.1, centers = 3)
 km.5
 
@@ -102,6 +105,7 @@ GDS.all.areas <- GDS.programs.scores[,c("GDS.Data.literacy", "GDS.Databases", "G
 fviz_nbclust(GDS.all.areas, kmeans, method = "wss",  k.max = 7)
 
 # compute the number of chosen clusters
+# Will change this after correct interpretation of Scree plot
 km.3 <- kmeans(GDS.all.areas, centers = 3)
 km.3
 
