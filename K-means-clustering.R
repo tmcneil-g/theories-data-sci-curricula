@@ -124,13 +124,21 @@ pca.summary.NA$importance
 pca.summary.NA$rotation
 
 # Plot PCA results
-biplot(x = pr.out.NA)
-# Plot the scores of the first two principal components 
+# Pull out the unique values in the 'species' column for legend
+
+Institution.names <- unique(NASEM.all.areas.1$Institution)
+
+# Plot the first two components
 plot(x = pr.out.NA$x[, 1],
      y = pr.out.NA$x[, 2],
      xlab = "PC 1",
-     ylab = "PC 2")
-
+     ylab = "PC 2",
+     pch = 19,
+    
+legend("bottomleft", 
+       legend = Institution.names, 
+       pch = 19, 
+       cex = 0.8)
 
 # perform principal components analysis using the prcomp() function on GDS
 pr.out.GDS <- prcomp (x = GDS.all.areas , scale = TRUE)
@@ -143,16 +151,22 @@ pca.summary.GDS$importance
 
 # Identify what these factors actually say about the variation observed in data
 pca.summary.GDS$rotation
+     
+     # Plot PCA results
+# Pull out the unique values in the 'species' column for legend
 
-# Plot PCA results
-biplot(x = pr.out.GDS)
-# Plot the scores of the first two principal components 
+Institution.names <- unique(NASEM.all.areas.1$Institution)
+
+# Plot the first two components
 plot(x = pr.out.GDS$x[, 1],
      y = pr.out.GDS$x[, 2],
      xlab = "PC 1",
-     ylab = "PC 2")
-
-
-
+     ylab = "PC 2",
+     pch = 19,
+    
+legend("bottomleft", 
+       legend = Institution.names, 
+       pch = 19, 
+       cex = 0.8)
 
 
