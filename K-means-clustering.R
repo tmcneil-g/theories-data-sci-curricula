@@ -111,6 +111,8 @@ fviz_cluster(km.3, data = GDS.all.areas, label=NA)+theme_bw()
 
 
 # Perform principal components analysis using the prcomp() function on NASEM
+
+
 pr.out.NA <- prcomp (x = NASEM.all.areas.1 , scale = TRUE)
 # Look at results
 pca.summary.NA <- summary(pr.out.NA)
