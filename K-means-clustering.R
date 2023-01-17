@@ -61,8 +61,6 @@ ggplot(ethics.domain, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualiz
 
 
 # including all areas/sub-areas in NASEM in cluster analysis, excluding following: NASEM.Statistics.04, NASEM.Data.management.01, NASEM.Data.management.06, NASEM.Data.description.visualization.02
-# Reason doing above is that error message states one cannot include variable that has 0 variance (https://stackoverflow.com/questions/15068981/removal-of-constant-columns-in-r)
-# Doing the preceding got rid of error message
 NASEM.all.areas.1 <- programs.scores[,c("NASEM.Math.01", "NASEM.Math.02", "NASEM.Math.03", "NASEM.Math.04", "NASEM.Math.05", "NASEM.Math.06",
 "NASEM.Compute.01", "NASEM.Compute.02", "NASEM.Compute.03", "NASEM.Compute.04", "NASEM.Compute.05", 
 "NASEM.Statistics.01", "NASEM.Statistics.02", "NASEM.Statistics.03", "NASEM.Statistics.05", "NASEM.Statistics.06", 
