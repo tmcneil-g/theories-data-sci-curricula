@@ -111,7 +111,7 @@ fviz_cluster(km.3, data = GDS.all.areas, label=NA)+theme_bw()
 
 
 # Perform principal components analysis using the prcomp() function on NASEM
-pr.out.NA <- prcomp (NASEM.all.areas.1 , scale = TRUE)
+pr.out.NA <- prcomp (x = NASEM.all.areas.1 , scale = TRUE)
 # Look at results
 pca.summary.NA <- summary(pr.out.NA)
 # Lists the objects produced by summary
@@ -125,10 +125,15 @@ pca.summary.NA$rotation
 
 # Plot PCA results
 biplot(x = pr.out.NA)
+# Plot the scores of the first two principal components 
+plot(x = pr.out.NA$x[, 1],
+     y = pr.out.NA$x[, 2],
+     xlab = "PC 1",
+     ylab = "PC 2")
 
 
 # perform principal components analysis using the prcomp() function on GDS
-pr.out.GDS <- prcomp (GDS.all.areas , scale = TRUE)
+pr.out.GDS <- prcomp (x = GDS.all.areas , scale = TRUE)
 # Look at results
 pca.summary.GDS <- summary(pr.out.GDS)
 # Lists the objects produced by summary
@@ -141,7 +146,11 @@ pca.summary.GDS$rotation
 
 # Plot PCA results
 biplot(x = pr.out.GDS)
-
+# Plot the scores of the first two principal components 
+plot(x = pr.out.GDS$x[, 1],
+     y = pr.out.GDS$x[, 2],
+     xlab = "PC 1",
+     ylab = "PC 2")
 
 
 
