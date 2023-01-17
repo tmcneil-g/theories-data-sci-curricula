@@ -137,6 +137,10 @@ legend("bottomleft",
        legend = Institution.names, 
        pch = 19, 
        cex = 0.8)
+     
+# Got following error message: "Error in legend("bottomleft", legend = Institution.names, pch = 19, cex = 0.8) : 
+  'legend' is of length 0"
+
 
 # perform principal components analysis using the prcomp() function on GDS
 pr.out.GDS <- prcomp (x = GDS.all.areas , scale = TRUE)
