@@ -110,16 +110,38 @@ fviz_cluster(km.3, data = GDS.all.areas, label=NA)+theme_bw()
 # NASEM.only.areas <- programs.scores[,c("
 
 
-# perform principal components analysis using the prcomp() function on NASEM
+# Perform principal components analysis using the prcomp() function on NASEM
 pr.out.NA <- prcomp (NASEM.all.areas.1 , scale = TRUE)
-names (pr.out.NA)
-pr.out.NA$rotation
+# Look at results
+pca.summary.NA <- summary(pr.out.NA)
+# Lists the objects produced by summary
+ls(pca.summary.NA)
+# Identify important factors that emerge from the PCA that explain a lot of variation
+pca.summary.NA$importance
+# Second row, "Proportion of Variance," shows how much variation in the data is described by each component
+
+# Identify what these factors actually say about the variation observed in data
+pca.summary.NA$rotation
+
+# Plot PCA results
+biplot(x = pr.out.NA)
 
 
 # perform principal components analysis using the prcomp() function on GDS
 pr.out.GDS <- prcomp (GDS.all.areas , scale = TRUE)
-names (pr.out.GDS)
-pr.out.GDS$rotation
+# Look at results
+pca.summary.GDS <- summary(pr.out.GDS)
+# Lists the objects produced by summary
+ls(pca.summary.GDS)
+# Identify important factors that emerge from the PCA
+pca.summary.GDS$importance
+
+# Identify what these factors actually say about the variation observed in data
+pca.summary.GDS$rotation
+
+# Plot PCA results
+biplot(x = pr.out.GDS)
+
 
 
 
