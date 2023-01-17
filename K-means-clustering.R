@@ -143,7 +143,7 @@ legend("bottomleft",
 
 
 # perform principal components analysis using the prcomp() function on GDS
-pr.out.GDS <- prcomp (x = GDS.all.areas , scale = TRUE)
+pr.out.GDS <- prcomp (x = GDS.programs.scores , scale = TRUE)
 # Look at results
 pca.summary.GDS <- summary(pr.out.GDS)
 # Lists the objects produced by summary
