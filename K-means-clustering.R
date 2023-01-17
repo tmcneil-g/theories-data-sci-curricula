@@ -88,7 +88,7 @@ fviz_cluster(km.5, data = NASEM.all.areas.1, label=NA)+theme_bw()
 
 # including all areas/sub-areas in GDS in cluster analysis
 # read the dataset
-GDS.programs.scores <- read.csv(file = "scores-GDS-1.csv")
+GDS.programs.scores <- read.csv(file = "scores-GDS-1.csv", stringsAsFactors = TRUE)
 
 # Investigate data 
 head(GDS.programs.scores)
@@ -157,7 +157,7 @@ pca.summary.GDS$importance
 pca.summary.GDS$rotation
   
 # Pull out the unique values in the 'Institution' column for legend
-Institution.names <- unique(GDS.programs.scores$Institution)
+Institution.names.1 <- unique(GDS.programs.scores$Institution)
 
 # Plot the first two components
 plot(x = pr.out.GDS$x[, 1],
@@ -167,7 +167,7 @@ plot(x = pr.out.GDS$x[, 1],
      pch = 19,
     
 legend("bottomleft", 
-       legend = Institution.names, 
+       legend = Institution.names.1, 
        pch = 19, 
        cex = 0.8)
 
