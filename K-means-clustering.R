@@ -123,9 +123,7 @@ pca.summary.NA$importance
 # Identify what these factors actually say about the variation observed in data
 pca.summary.NA$rotation
 
-# Plot PCA results
-# Pull out the unique values in the 'species' column for legend
-
+# Pull out the unique values in the 'Institution' column for legend
 Institution.names <- unique(NASEM.all.areas.1$Institution)
 
 # Plot the first two components
@@ -151,11 +149,9 @@ pca.summary.GDS$importance
 
 # Identify what these factors actually say about the variation observed in data
 pca.summary.GDS$rotation
-     
-     # Plot PCA results
-# Pull out the unique values in the 'species' column for legend
-
-Institution.names <- unique(NASEM.all.areas.1$Institution)
+  
+# Pull out the unique values in the 'Institution' column for legend
+Institution.names <- unique(GDS.programs.scores$Institution)
 
 # Plot the first two components
 plot(x = pr.out.GDS$x[, 1],
