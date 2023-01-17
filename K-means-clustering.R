@@ -33,6 +33,9 @@ fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
 # I chose variables that are common in many programs: machine learning and data viz
 ML.visual <- programs.scores[,c("NASEM.Modeling.01", "NASEM.Data.description.visualization.01")]
 
+# Elbow method (scree plot) to determine ideal number of clusters
+fviz_nbclust(programs.scores, kmeans, method = "wss",  k.max = 17)
+
 # compute the number of chosen clusters 
 km.1 <- kmeans(ML.visual, centers = 3)
 km.1
@@ -72,7 +75,7 @@ NASEM.all.areas.1 <- programs.scores[,c("NASEM.Math.01", "NASEM.Math.02", "NASEM
 "NASEM.Ethics.01", "NASEM.Ethics.02", "NASEM.Ethics.03", "NASEM.Ethics.04", "NASEM.Ethics.05")]
 
 # Elbow method (scree plot) to determine ideal number of clusters
-fviz_nbclust(NASEM.all.areas.1, kmeans, method = "wss",  k.max = 20)
+fviz_nbclust(NASEM.all.areas.1, kmeans, method = "wss",  k.max = 17)
 
 # compute the number of chosen clusters 
 km.5 <- kmeans(NASEM.all.areas.1, centers = 3)
