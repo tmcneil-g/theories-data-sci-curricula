@@ -38,7 +38,7 @@ fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
 ML.visual <- programs.scores[,c("NASEM.Modeling.01", "NASEM.Data.description.visualization.01")]
 
 # Elbow method (scree plot) to determine ideal number of clusters
-fviz_nbclust(programs.scores, kmeans, method = "wss",  k.max = 17)
+fviz_nbclust(programs.scores[,c("NASEM.Modeling.01", "NASEM.Data.description.visualization.01")], kmeans, method = "wss",  k.max = 4)
 
 # compute the number of chosen clusters 
 # Will change this after correct interpretation of Scree plot
