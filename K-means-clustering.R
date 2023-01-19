@@ -21,6 +21,9 @@ head(programs.scores)
 # I chose two variables that scored low: ethics.01, the most general ethics sub-area, and domain
 ethics.domain <- programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")]
 
+# Scree plot
+fviz_nbclust(programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")], kmeans, method = "wss",  k.max = 17)
+
 # compute the number of chosen clusters
 # Will change this after correct interpretation of Scree plot
 km <- kmeans(ethics.domain, centers = 3)
