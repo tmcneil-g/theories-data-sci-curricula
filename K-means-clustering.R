@@ -22,11 +22,11 @@ head(programs.scores)
 ethics.domain <- programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")]
 
 # Scree plot
-fviz_nbclust(programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")], kmeans, method = "wss",  k.max = 17)
+fviz_nbclust(programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")], kmeans, method = "wss",  k.max = 7)
 
 # compute the number of chosen clusters
 # Will change this after correct interpretation of Scree plot
-km <- kmeans(ethics.domain, centers = 3)
+km <- kmeans(ethics.domain, centers = 4)
 km
 
 # plot the results of the clusters in a scatter plot formed by the two variables
