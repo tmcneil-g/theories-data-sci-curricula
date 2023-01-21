@@ -183,4 +183,10 @@ legend("bottomleft",
        pch = 19, 
        cex = 0.8)
 
-
+     
+# Merge files to add institution names
+units_df <- merge(x = units_df, y = programs)
+rm(programs)
+     
+     
+     
