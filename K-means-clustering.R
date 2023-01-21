@@ -185,8 +185,8 @@ legend("bottomleft",
 
      
 # Merge files to add institution names
-units_df <- merge(x = units_df, y = programs)
-rm(programs)
+# units_df <- merge(x = units_df, y = programs)
+# rm(programs)
      
      
      
