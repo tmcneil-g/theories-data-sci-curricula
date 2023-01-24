@@ -52,6 +52,9 @@ fviz_cluster(km, data = ML.visual, label=NA)+theme_bw()
 # Create table that shows the distinct pairs of points
 count(ML.visual, NASEM.Modeling.01, NASEM.Data.description.visualization.01)
 
+# Create table that shows the distinct pairs of points
+count(ethics.domain, NASEM.Ethics.01, NASEM.Domain.01)
+
 # Investigate variable
 ethics.domain
 
@@ -61,6 +64,15 @@ ggplot(ML.visual, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualizatio
   theme_bw()
 
 ggplot(ML.visual, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualization.01)) + 
+  geom_jitter(width = 0.1, height = 0.1, alpha = 0.5) + 
+  theme_bw()
+
+# Look at basic scatterplots of data
+ggplot(ethics.domain, aes(x=NASEM.Ethics.01, y=NASEM.Domain.01)) + 
+  geom_point(alpha=0.2) + 
+  theme_bw()
+
+ggplot(ethics.domain, aes(x=NASEM.Ethics.01, y=NASEM.Domain.01)) + 
   geom_jitter(width = 0.1, height = 0.1, alpha = 0.5) + 
   theme_bw()
 
