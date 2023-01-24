@@ -45,6 +45,9 @@ fviz_nbclust(programs.scores[,c("NASEM.Modeling.01", "NASEM.Data.description.vis
 km.1 <- kmeans(ML.visual, centers = 3)
 km.1
 
+# Elbow method (scree plot) to determine ideal number of clusters
+fviz_nbclust(ML.visual, kmeans, method = "wss",  k.max = 7)
+
 # plot the results of the clusters in a scatter plot formed by the two variables
 fviz_cluster(km, data = ML.visual, label=NA)+theme_bw()
 
