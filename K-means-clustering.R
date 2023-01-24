@@ -45,9 +45,6 @@ fviz_nbclust(programs.scores[,c("NASEM.Modeling.01", "NASEM.Data.description.vis
 km.1 <- kmeans(ML.visual, centers = 3)
 km.1
 
-# Elbow method (scree plot) to determine ideal number of clusters
-fviz_nbclust(ML.visual, kmeans, method = "wss",  k.max = 7)
-
 # plot the results of the clusters in a scatter plot formed by the two variables
 fviz_cluster(km, data = ML.visual, label=NA)+theme_bw()
 
@@ -187,21 +184,24 @@ plot(pr.out.GDS, type = "l")
 biplot(x = pr.out.GDS)
 
 # Plot the first two components
+# Need to experiment with xlim and ylim to get labels to show up properly
 plot(x = pr.out.GDS$x[, 1],
      y = pr.out.GDS$x[, 2],
      xlab = "PC 1",
      ylab = "PC 2",
      pch = 19,
-    
-legend("bottomleft", 
-       legend = Institution, 
-       pch = 19, 
-       cex = 0.8)
-
+     xlim = c(-5, 8),
+ylim = c(-5, 5))
      
-# Merge files to add institution names
-# units_df <- merge(x = units_df, y = programs)
-# rm(programs)
+legend("bottomleft", 
+     legend = Institution, 
+  pch = 19, 
+   cex = 0.8)
+
+# add Institution labels
+text(pr.out.GDS$x[, 1], pr.out.GDS$x[, 2], labels = GDS.programs.scores$Institution)
+     
+
      
      
      
