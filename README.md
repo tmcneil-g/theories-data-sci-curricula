@@ -24,7 +24,15 @@ This work addresses several main questions:
    given to technology in curriculum that can handle big data. Is Donoho correct?
 
 ## 1. Comparison of skills 
-To compare skills, using the 46 areas/sub-areas in the NASEM (2018) framework, I measure coursework coverage of (1) “hard” skills in statistics/mathematics and computer science versus (2) domain knowledge and “soft” skills in ethics and communication and teamwork.
+To compare skills and test academic capitalism theory, using the 46 areas/sub-areas in the NASEM (2018) framework, I measure coursework coverage of (1) “hard” skills in statistics/mathematics and computer science versus (2) domain knowledge and “soft” skills in ethics and communication and teamwork.
 
 ## 2. Cluster analysis
 I compare coverage among 53 areas/sub-areas within each of the NASEM and GDS frameworks using k-means clustering.
+
+
+### 2. Coursework and administrative unit
+
+To visualize the proportion of coursework in two areas ("hard" skills and "other" areas,), the units-visualization.R script creates a 
+parallel coordinates plot with the proportions for each undergraduate data 
+science program analyzed here.
+
