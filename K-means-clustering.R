@@ -93,6 +93,20 @@ NASEM.all.areas.1 <- programs.scores[,c("NASEM.Math.01", "NASEM.Math.02", "NASEM
 # Elbow method (scree plot) to determine ideal number of clusters
 fviz_nbclust(NASEM.all.areas.1, kmeans, method = "wss",  k.max = 17)
 
+# Silhouette method
+fviz_nbclust(NASEM.all.areas.1, kmeans, method = "silhouette") +
+  labs(subtitle = "Silhouette method")
+
+# Gap statistic
+set.seed(42)
+fviz_nbclust(NASEM.all.areas.1, kmeans,
+  nstart = 25,
+  method = "gap_stat",
+  nboot = 500 # reduce it for lower computation time (but less precise results)
+) +
+  labs(subtitle = "Gap statistic method")
+
+
 # compute the number of chosen clusters 
 # Will change this after correct interpretation of Scree plot
 km.5 <- kmeans(NASEM.all.areas.1, centers = 3)
@@ -118,6 +132,20 @@ GDS.all.areas <- GDS.programs.scores[,c("GDS.Data.literacy", "GDS.Databases", "G
 
 # Elbow method (scree plot) to determine ideal number of clusters
 fviz_nbclust(GDS.all.areas, kmeans, method = "wss",  k.max = 7)
+
+# Silhouette method
+fviz_nbclust(GDS.all.areas, kmeans, method = "silhouette") +
+  labs(subtitle = "Silhouette method")
+
+# Gap statistic
+set.seed(42)
+fviz_nbclust(GDS.all.areas, kmeans,
+  nstart = 25,
+  method = "gap_stat",
+  nboot = 500 # reduce it for lower computation time (but less precise results)
+) +
+  labs(subtitle = "Gap statistic method")
+
 
 # compute the number of chosen clusters
 # Will change this after correct interpretation of Scree plot
