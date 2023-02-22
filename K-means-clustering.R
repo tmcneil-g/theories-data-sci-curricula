@@ -16,67 +16,6 @@ programs.scores <- read.csv(file = "Data/scores-nasem-1.csv")
 # Investigate data 
 head(programs.scores)
 
-# select a subset of the variables
-# Here, the x-axis and y-axis are specific areas/sub-areas in the NASEM framework
-# I chose two variables that scored low: ethics.01, the most general ethics sub-area, and domain
-ethics.domain <- programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")]
-
-# Scree plot
-fviz_nbclust(programs.scores[,c("NASEM.Ethics.01", "NASEM.Domain.01")], kmeans, method = "wss",  k.max = 7)
-
-# compute the number of chosen clusters
-# Will change this after correct interpretation of Scree plot
-km <- kmeans(ethics.domain, centers = 4)
-km
-
-# plot the results of the clusters in a scatter plot formed by the two variables
-fviz_cluster(km, data = ethics.domain, label=NA)+theme_bw()
-
-# select a subset of the variables
-# Here, the x-axis and y-axis are specific areas/sub-areas in the NASEM framework
-# I chose variables that are common in many programs: machine learning and data viz
-ML.visual <- programs.scores[,c("NASEM.Modeling.01", "NASEM.Data.description.visualization.01")]
-
-# Elbow method (scree plot) to determine ideal number of clusters
-fviz_nbclust(programs.scores[,c("NASEM.Modeling.01", "NASEM.Data.description.visualization.01")], kmeans, method = "wss",  k.max = 4)
-
-# compute the number of chosen clusters 
-# Will change this after correct interpretation of Scree plot
-km.1 <- kmeans(ML.visual, centers = 3)
-km.1
-
-# plot the results of the clusters in a scatter plot formed by the two variables
-fviz_cluster(km, data = ML.visual, label=NA)+theme_bw()
-
-
-# Create table that shows the distinct pairs of points
-count(ML.visual, NASEM.Modeling.01, NASEM.Data.description.visualization.01)
-
-# Create table that shows the distinct pairs of points
-count(ethics.domain, NASEM.Ethics.01, NASEM.Domain.01)
-
-# Investigate variable
-ethics.domain
-
-# Look at basic scatterplots of data
-ggplot(ML.visual, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualization.01)) + 
-  geom_point(alpha=0.2) + 
-  theme_bw()
-
-ggplot(ML.visual, aes(x=NASEM.Modeling.01, y=NASEM.Data.description.visualization.01)) + 
-  geom_jitter(width = 0.1, height = 0.1, alpha = 0.5) + 
-  theme_bw()
-
-# Look at basic scatterplots of data
-ggplot(ethics.domain, aes(x=NASEM.Ethics.01, y=NASEM.Domain.01)) + 
-  geom_point(alpha=0.2) + 
-  theme_bw()
-
-ggplot(ethics.domain, aes(x=NASEM.Ethics.01, y=NASEM.Domain.01)) + 
-  geom_jitter(width = 0.1, height = 0.1, alpha = 0.5) + 
-  theme_bw()
-
-
 # including all areas/sub-areas in NASEM in cluster analysis, excluding following: NASEM.Statistics.04, NASEM.Data.management.01, NASEM.Data.management.06, 
 # NASEM.Data.description.visualization.02
 NASEM.all.areas.1 <- programs.scores[,c("NASEM.Math.01", "NASEM.Math.02", "NASEM.Math.03", "NASEM.Math.04", "NASEM.Math.05", "NASEM.Math.06",
