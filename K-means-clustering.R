@@ -47,17 +47,13 @@ fviz_nbclust(NASEM.all.areas.1, kmeans,
 
 
 # compute the number of chosen clusters 
-# Will change this after correct interpretation of Scree plot
-km.5 <- kmeans(NASEM.all.areas.1, centers = 3)
+km.5 <- kmeans(NASEM.all.areas.1, centers = 7)
 km.5
 
 # plot the results of the clusters in a scatter plot formed by the variables
 fviz_cluster(km.5, data = NASEM.all.areas.1, label=NA)+theme_bw()
 
 # put plot in "Notes for clustering project" document 
-
-# start to make multiple dimension plots 
-
 
 # including all areas/sub-areas in GDS in cluster analysis
 # read the dataset
@@ -88,7 +84,7 @@ fviz_nbclust(GDS.all.areas, kmeans,
 
 # compute the number of chosen clusters
 # Will change this after correct interpretation of Scree plot
-km.3 <- kmeans(GDS.all.areas, centers = 3)
+km.3 <- kmeans(GDS.all.areas, centers = 5)
 km.3
 
 # plot the results of the clusters in a scatter plot formed by the variables
