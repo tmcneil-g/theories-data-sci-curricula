@@ -1,7 +1,7 @@
 # Units visualization for hard/soft skills for undergraduate degrees
-# Jeff Oliver
-# jcoliver@email.arizona.edu
-# 2019-06-07
+# Torbet McNeil
+# tmcneil@arizona.edu
+# 2023-03-25
 
 ################################################################################
 library(tidyverse)
@@ -18,9 +18,6 @@ rm(institutions)
 units_df <- merge(x = units_df, y = programs)
 rm(programs)
 
-# Limit units df to those programs that are majors (exclude minor & certificate
-# programs)
-units_df <- units_df[units_df$Major, ]
 
 # Drop any NA rows
 units_df <- na.omit(units_df)
