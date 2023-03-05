@@ -7,12 +7,11 @@
 library(tidyverse)
 
 # Summary statistics and statistical test comparing units among programs for hard/soft skills
-# Provides mean proportion of CS, math/stats, and domain units and addresses 
+# Provides mean proportion of hard/soft units and addresses 
 # two questions:
-# 1. Do programs housed in Computer Science units have a higher proportion of 
-# computer science courses than programs housed in other units?
-# 2. Do programs housed in Statistics units have a higher proportion of 
-# stats/math courses than programs housed in other units?
+# 1. Do hard skills have a higher proportion of than soft skills?
+
+
 
 units.df <- read.csv(file = "data/units.csv")
 programs <- read.csv(file = "data/programs.csv")
@@ -26,7 +25,7 @@ rm(institutions)
 units.df <- merge(x = units.df, y = programs)
 rm(programs)
 
-# Limit units df to those programs that are majors (exclude minor & certificate
+# Include units df to those programs that are majors (include minor & certificate
 # programs)
 units.df <- units.df[units.df$Major, ]
 
