@@ -11,8 +11,6 @@ library(tidyverse)
 # two questions:
 # 1. Do hard skills have a higher proportion of than soft skills?
 
-
-
 units.df <- read.csv(file = "data/units.csv")
 programs <- read.csv(file = "data/programs.csv")
 institutions <- read.csv(file = "data/institution-names.csv")
