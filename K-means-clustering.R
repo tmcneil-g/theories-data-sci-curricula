@@ -80,7 +80,6 @@ fviz_nbclust(GDS.all.areas, kmeans,
   labs(subtitle = "Gap statistic method")
 
 # compute the number of chosen clusters
-# Will change this after correct interpretation of Scree plot
 km.3 <- kmeans(GDS.all.areas, centers = 5)
 km.3
 
