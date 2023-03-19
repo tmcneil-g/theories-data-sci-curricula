@@ -10,8 +10,10 @@ library("factoextra")
 library("cluster")
 library("dplyr")
 
+dir.create(path = "data")
+
 # read the dataset
-programs.scores <- read.csv(file = "Data/scores-nasem-1.csv")
+programs.scores <- read.csv(file = "data/scores-nasem-1.csv")
 
 # Investigate data 
 head(programs.scores)
