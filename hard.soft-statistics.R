@@ -8,7 +8,7 @@ library(tidyverse)
 
 # Summary statistics and statistical test comparing units among programs for hard/soft skills
 # Provides mean proportion of hard/soft units and addresses 
-# two questions:
+# Posing two questions:
 # 1. Do hard skills have a higher proportion of than soft skills?
 
 units.df <- read.csv(file = "data/units.csv")
